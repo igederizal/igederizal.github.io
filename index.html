@@ -5,53 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>I Gede Rizal Maulana — Backend &amp; Security</title>
   <meta name="description" content="Backend developer dari Bali. Go, Docker, CI/CD, dan keamanan aplikasi web.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
-  <nav class="nav">
-    <a href="#" class="nav-logo">IGR<span class="accent">.</span></a>
-    <div class="nav-links">
-      <a href="#about" data-id="Tentang" data-en="About">Tentang</a>
-      <a href="#skills" data-id="Keahlian" data-en="Skills">Keahlian</a>
-      <a href="#projects" data-id="Proyek" data-en="Projects">Proyek</a>
-      <a href="#services" data-id="Jasa" data-en="Services">Jasa</a>
-      <a href="#contact" data-id="Kontak" data-en="Contact">Kontak</a>
-      <button id="lang-toggle" class="lang-btn" type="button">EN</button>
-    </div>
-  </nav>
+  <div class="mobile-bar">
+    <a href="#home" class="logo">IGR<span class="accent">.</span></a>
+    <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 
-  <header class="hero">
-    <p class="hero-hello accent mono" data-id="// halo, saya" data-en="// hi, I'm">// halo, saya</p>
-    <h1>I Gede Rizal Maulana</h1>
-    <p class="hero-role" data-id="Backend Developer &amp; Enthusiast Keamanan Web" data-en="Backend Developer &amp; Web Security Enthusiast">Backend Developer &amp; Enthusiast Keamanan Web</p>
-    <p class="hero-pitch"
-       data-id="Saya membangun sistem yang andal — dan memastikan sistem itu aman. Berbasis di Bali, siap bekerja remote untuk klien di mana pun."
-       data-en="I build reliable systems — and make sure they stay secure. Based in Bali, ready to work remotely for clients anywhere.">
-       Saya membangun sistem yang andal — dan memastikan sistem itu aman. Berbasis di Bali, siap bekerja remote untuk klien di mana pun.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary" data-id="Lihat Proyek" data-en="View Projects">Lihat Proyek</a>
-      <a href="#contact" class="btn btn-ghost" data-id="Hubungi Saya" data-en="Contact Me">Hubungi Saya</a>
-    </div>
-  </header>
+  <div class="layout">
 
-  <section id="about" class="section">
-    <h2 class="section-title"><span class="accent mono">01.</span> <span data-id="Tentang Saya" data-en="About Me">Tentang Saya</span></h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p data-id="Saya backend developer asal Bali yang senang membangun sistem yang andal — dan memastikan sistem itu aman. Saya membuat project personal seperti CDN simulator (edge caching, multi-region routing, observability) sambil mendalami keamanan aplikasi web."
-           data-en="I'm a backend developer from Bali who enjoys building reliable systems — and making sure they stay secure. I build personal projects like a CDN simulator (edge caching, multi-region routing, observability) while studying web application security.">
-           Saya backend developer asal Bali yang senang membangun sistem yang andal — dan memastikan sistem itu aman. Saya membuat project personal seperti CDN simulator (edge caching, multi-region routing, observability) sambil mendalami keamanan aplikasi web.</p>
-        <p data-id="Baru saja saya mengaudit project sendiri dengan pendekatan OWASP: menemukan 11 celah (4 di antaranya high severity — admin API tanpa autentikasi, SSRF, Redis &amp; Grafana terbuka), lalu memperbaiki semuanya lengkap dengan regression test yang berjalan otomatis di CI."
-           data-en="I recently audited my own project with an OWASP-based approach: found 11 vulnerabilities (4 of them high severity — unauthenticated admin API, SSRF, exposed Redis &amp; Grafana), then fixed them all with regression tests running automatically in CI.">
-           Baru saja saya mengaudit project sendiri dengan pendekatan OWASP: menemukan 11 celah (4 di antaranya high severity — admin API tanpa autentikasi, SSRF, Redis &amp; Grafana terbuka), lalu memperbaiki semuanya lengkap dengan regression test yang berjalan otomatis di CI.</p>
-        <p class="mono muted"
-           data-id="Prinsip saya: secure by default, verifikasi dengan test, dokumentasikan apa yang dilakukan."
-           data-en="My principles: secure by default, verify with tests, document what I do.">
-           Prinsip saya: secure by default, verifikasi dengan test, dokumentasikan apa yang dilakukan.</p>
+    <aside class="sidebar" id="sidebar">
+      <a href="#home" class="logo sidebar-logo">IGR<span class="accent">.</span></a>
+
+      <nav class="side-nav" aria-label="Navigasi utama">
+        <a href="#about" data-nav><span class="num mono">01.</span><span data-id="Tentang" data-en="About">Tentang</span></a>
+        <a href="#skills" data-nav><span class="num mono">02.</span><span data-id="Keahlian" data-en="Skills">Keahlian</span></a>
+        <a href="#projects" data-nav><span class="num mono">03.</span><span data-id="Proyek" data-en="Projects">Proyek</span></a>
+        <a href="#services" data-nav><span class="num mono">04.</span><span data-id="Jasa" data-en="Services">Jasa</span></a>
+        <a href="#contact" data-nav><span class="num mono">05.</span><span data-id="Kontak" data-en="Contact">Kontak</span></a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <button id="lang-toggle" class="lang-btn mono" type="button">EN</button>
+        <a class="social" href="https://github.com/igederizal" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.14c0 .3.21.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        </a>
+        <a class="social" href="mailto:gederizalmaulana@gmail.com" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        </a>
       </div>
-      <div class="code-card mono" aria-hidden="true">
-        <div class="code-bar"><span></span><span></span><span></span></div>
+    </aside>
+
+    <main class="content">
+
+      <header class="hero" id="home">
+        <p class="hero-badge mono reveal">
+          <span class="dot" aria-hidden="true"></span>
+          <span data-id="Tersedia untuk proyek" data-en="Available for work">Tersedia untuk proyek</span>
+        </p>
+        <p class="hero-hello mono reveal" data-id="// halo, saya" data-en="// hi, I'm">// halo, saya</p>
+        <h1 class="reveal">I Gede Rizal<br>Maulana<span class="accent">.</span></h1>
+        <p class="hero-role reveal" data-id="Backend Developer &amp; Enthusiast Keamanan Web" data-en="Backend Developer &amp; Web Security Enthusiast">Backend Developer &amp; Enthusiast Keamanan Web</p>
+        <p class="hero-pitch reveal"
+           data-id="Saya membangun sistem yang andal — dan memastikan sistem itu aman. Berbasis di Bali, siap bekerja remote untuk klien di mana pun."
+           data-en="I build reliable systems — and make sure they stay secure. Based in Bali, ready to work remotely for clients anywhere.">
+           Saya membangun sistem yang andal — dan memastikan sistem itu aman. Berbasis di Bali, siap bekerja remote untuk klien di mana pun.</p>
+
+        <div class="stats reveal">
+          <div class="stat"><strong class="mono">11</strong><span data-id="temuan keamanan diperbaiki" data-en="security findings fixed">temuan keamanan diperbaiki</span></div>
+          <div class="stat"><strong class="mono">3</strong><span data-id="edge server ter-dockerisasi" data-en="containerized edge servers">edge server ter-dockerisasi</span></div>
+          <div class="stat"><strong class="mono">100%</strong><span data-id="CI hijau di setiap push" data-en="green CI on every push">CI hijau di setiap push</span></div>
+        </div>
+
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn-primary" data-id="Lihat Proyek" data-en="View Projects">Lihat Proyek</a>
+          <a href="#contact" class="btn btn-ghost" data-id="Hubungi Saya" data-en="Contact Me">Hubungi Saya</a>
+        </div>
+      </header>
+
+      <section id="about" class="section reveal">
+        <h2 class="section-title"><span class="accent mono">01.</span> <span data-id="Tentang Saya" data-en="About Me">Tentang Saya</span></h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p data-id="Saya backend developer asal Bali yang senang membangun sistem yang andal — dan memastikan sistem itu aman. Saya membuat project personal seperti CDN simulator (edge caching, multi-region routing, observability) sambil mendalami keamanan aplikasi web."
+               data-en="I'm a backend developer from Bali who enjoys building reliable systems — and making sure they stay secure. I build personal projects like a CDN simulator (edge caching, multi-region routing, observability) while studying web application security.">
+               Saya backend developer asal Bali yang senang membangun sistem yang andal — dan memastikan sistem itu aman. Saya membuat project personal seperti CDN simulator (edge caching, multi-region routing, observability) sambil mendalami keamanan aplikasi web.</p>
+            <p data-id="Baru saja saya mengaudit project sendiri dengan pendekatan OWASP: menemukan 11 celah (4 di antaranya high severity — admin API tanpa autentikasi, SSRF, Redis &amp; Grafana terbuka), lalu memperbaiki semuanya lengkap dengan regression test yang berjalan otomatis di CI."
+               data-en="I recently audited my own project with an OWASP-based approach: found 11 vulnerabilities (4 of them high severity — unauthenticated admin API, SSRF, exposed Redis &amp; Grafana), then fixed them all with regression tests running automatically in CI.">
+               Baru saja saya mengaudit project sendiri dengan pendekatan OWASP: menemukan 11 celah (4 di antaranya high severity — admin API tanpa autentikasi, SSRF, Redis &amp; Grafana terbuka), lalu memperbaiki semuanya lengkap dengan regression test yang berjalan otomatis di CI.</p>
+            <p class="mono muted principles"
+               data-id="$ prinsip: secure by default · verifikasi dengan test · dokumentasikan"
+               data-en="$ principles: secure by default · verify with tests · document everything">
+               $ prinsip: secure by default · verifikasi dengan test · dokumentasikan</p>
+          </div>
+          <div class="code-card mono" aria-hidden="true">
+            <div class="code-bar"><span></span><span></span><span></span><em>main.go</em></div>
 <pre><span class="c-key">func</span> <span class="c-fn">main</span>() {
   profile := <span class="c-str">"backend dev"</span>
   focus := []<span class="c-key">string</span>{
@@ -63,135 +100,148 @@
     learn(f) <span class="c-cm">// every day</span>
   }
 }</pre>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="section">
-    <h2 class="section-title"><span class="accent mono">02.</span> <span data-id="Keahlian" data-en="Skills">Keahlian</span></h2>
-    <div class="skills-grid">
-      <div class="skill-box">
-        <h3 class="mono accent" data-id="// backend" data-en="// backend">// backend</h3>
-        <ul>
-          <li>Go (Golang)</li>
-          <li>REST API design</li>
-          <li>HTTP internals</li>
-          <li>Redis caching</li>
-        </ul>
-      </div>
-      <div class="skill-box">
-        <h3 class="mono accent" data-id="// devops" data-en="// devops">// devops</h3>
-        <ul>
-          <li>Docker &amp; Compose</li>
-          <li>GitHub Actions CI/CD</li>
-          <li>Prometheus &amp; Grafana</li>
-          <li>Linux server</li>
-        </ul>
-      </div>
-      <div class="skill-box">
-        <h3 class="mono accent" data-id="// keamanan" data-en="// security">// keamanan</h3>
-        <ul>
-          <li>OWASP Top 10</li>
-          <li>Security code review</li>
-          <li>Server hardening</li>
-          <li>SSRF / cache poisoning</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-    <h2 class="section-title"><span class="accent mono">03.</span> <span data-id="Proyek Pilihan" data-en="Featured Projects">Proyek Pilihan</span></h2>
-
-    <div class="project-list">
-      <article class="project">
-        <div class="project-links mono">
-          <a href="https://github.com/igederizal/cdn-simulator" target="_blank" rel="noopener">GitHub &rarr;</a>
+          </div>
         </div>
-        <h3 data-id="CDN Simulator" data-en="CDN Simulator">CDN Simulator</h3>
-        <p data-id="Simulasi CDN multi-region: 3 edge server, router berbasis latency, origin server, dan Redis cache — lengkap dengan dashboard Prometheus/Grafana dan pipeline CI yang menjalankan unit test serta smoke test otomatis di setiap push."
-           data-en="Multi-region CDN simulation: 3 edge servers, a latency-based router, origin server, and Redis cache — complete with a Prometheus/Grafana dashboard and a CI pipeline running unit tests and smoke tests on every push.">
-           Simulasi CDN multi-region: 3 edge server, router berbasis latency, origin server, dan Redis cache — lengkap dengan dashboard Prometheus/Grafana dan pipeline CI yang menjalankan unit test serta smoke test otomatis di setiap push.</p>
-        <ul class="tags mono">
-          <li>Go</li><li>Docker</li><li>Redis</li><li>Prometheus</li><li>GitHub Actions</li>
-        </ul>
-      </article>
+      </section>
 
-      <article class="project">
-        <div class="project-links mono">
-          <a href="https://github.com/igederizal/cdn-simulator/commits/main" target="_blank" rel="noopener">Commits &rarr;</a>
+      <section id="skills" class="section reveal">
+        <h2 class="section-title"><span class="accent mono">02.</span> <span data-id="Keahlian" data-en="Skills">Keahlian</span></h2>
+        <div class="skills-grid">
+          <div class="skill-box">
+            <h3 class="mono accent" data-id="// backend" data-en="// backend">// backend</h3>
+            <ul>
+              <li>Go (Golang)</li>
+              <li>REST API design</li>
+              <li>HTTP internals</li>
+              <li>Redis caching</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <h3 class="mono accent" data-id="// devops" data-en="// devops">// devops</h3>
+            <ul>
+              <li>Docker &amp; Compose</li>
+              <li>GitHub Actions CI/CD</li>
+              <li>Prometheus &amp; Grafana</li>
+              <li>Linux server</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <h3 class="mono accent" data-id="// keamanan" data-en="// security">// keamanan</h3>
+            <ul>
+              <li>OWASP Top 10</li>
+              <li>Security code review</li>
+              <li>Server hardening</li>
+              <li>SSRF / cache poisoning</li>
+            </ul>
+          </div>
         </div>
-        <h3 data-id="Audit Keamanan (OWASP)" data-en="Security Audit (OWASP)">Audit Keamanan (OWASP)</h3>
-        <p data-id="Audit menyeluruh terhadap project sendiri: 11 temuan, 4 di antaranya high severity (admin API tanpa autentikasi, SSRF via URL parsing, Redis &amp; Grafana exposed). Semua diperbaiki, diverifikasi lewat uji exploit langsung, dan diamankan dengan 5 regression test di CI."
-           data-en="A full audit of my own project: 11 findings, 4 of them high severity (unauthenticated admin API, SSRF via URL parsing, exposed Redis &amp; Grafana). All fixed, verified with live exploit tests, and locked in with 5 regression tests in CI.">
-           Audit menyeluruh terhadap project sendiri: 11 temuan, 4 di antaranya high severity (admin API tanpa autentikasi, SSRF via URL parsing, Redis &amp; Grafana exposed). Semua diperbaiki, diverifikasi lewat uji exploit langsung, dan diamankan dengan 5 regression test di CI.</p>
-        <ul class="tags mono">
-          <li>OWASP Top 10</li><li>Go</li><li>Threat modeling</li><li>Regression tests</li>
-        </ul>
-      </article>
+      </section>
 
-      <article class="project project-ongoing">
-        <div class="project-links mono">
-          <span class="ongoing-badge mono" data-id="● sedang berjalan" data-en="● in progress">● sedang berjalan</span>
+      <section id="projects" class="section reveal">
+        <h2 class="section-title"><span class="accent mono">03.</span> <span data-id="Proyek Pilihan" data-en="Featured Projects">Proyek Pilihan</span></h2>
+
+        <div class="project-list">
+          <article class="project reveal">
+            <div class="project-head">
+              <h3 data-id="CDN Simulator" data-en="CDN Simulator">CDN Simulator</h3>
+              <div class="project-links mono">
+                <a href="https://github.com/igederizal/cdn-simulator" target="_blank" rel="noopener">GitHub &rarr;</a>
+              </div>
+            </div>
+            <p data-id="Simulasi CDN multi-region: 3 edge server, router berbasis latency, origin server, dan Redis cache — lengkap dengan dashboard Prometheus/Grafana dan pipeline CI yang menjalankan unit test serta smoke test otomatis di setiap push."
+               data-en="Multi-region CDN simulation: 3 edge servers, a latency-based router, origin server, and Redis cache — complete with a Prometheus/Grafana dashboard and a CI pipeline running unit tests and smoke tests on every push.">
+               Simulasi CDN multi-region: 3 edge server, router berbasis latency, origin server, dan Redis cache — lengkap dengan dashboard Prometheus/Grafana dan pipeline CI yang menjalankan unit test serta smoke test otomatis di setiap push.</p>
+            <ul class="tags mono">
+              <li>Go</li><li>Docker</li><li>Redis</li><li>Prometheus</li><li>GitHub Actions</li>
+            </ul>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-head">
+              <h3 data-id="Audit Keamanan (OWASP)" data-en="Security Audit (OWASP)">Audit Keamanan (OWASP)</h3>
+              <div class="project-links mono">
+                <a href="https://github.com/igederizal/cdn-simulator/commits/main" target="_blank" rel="noopener">Commits &rarr;</a>
+              </div>
+            </div>
+            <p data-id="Audit menyeluruh terhadap project sendiri: 11 temuan, 4 di antaranya high severity (admin API tanpa autentikasi, SSRF via URL parsing, Redis &amp; Grafana exposed). Semua diperbaiki, diverifikasi lewat uji exploit langsung, dan diamankan dengan 5 regression test di CI."
+               data-en="A full audit of my own project: 11 findings, 4 of them high severity (unauthenticated admin API, SSRF via URL parsing, exposed Redis &amp; Grafana). All fixed, verified with live exploit tests, and locked in with 5 regression tests in CI.">
+               Audit menyeluruh terhadap project sendiri: 11 temuan, 4 di antaranya high severity (admin API tanpa autentikasi, SSRF via URL parsing, Redis &amp; Grafana exposed). Semua diperbaiki, diverifikasi lewat uji exploit langsung, dan diamankan dengan 5 regression test di CI.</p>
+            <ul class="tags mono">
+              <li>OWASP Top 10</li><li>Go</li><li>Threat modeling</li><li>Regression tests</li>
+            </ul>
+          </article>
+
+          <article class="project project-ongoing reveal">
+            <div class="project-head">
+              <h3 data-id="Web Security Labs" data-en="Web Security Labs">Web Security Labs</h3>
+              <div class="project-links mono">
+                <span class="ongoing-badge mono" data-id="● sedang berjalan" data-en="● in progress">● sedang berjalan</span>
+              </div>
+            </div>
+            <p data-id="Latihan terstruktur di PortSwigger Web Security Academy (SQLi, XSS, SSRF, IDOR) sebagai persiapan mengikuti bug bounty program secara legal dan bertanggung jawab."
+               data-en="Structured practice on PortSwigger Web Security Academy (SQLi, XSS, SSRF, IDOR) as preparation for participating in bug bounty programs legally and responsibly.">
+               Latihan terstruktur di PortSwigger Web Security Academy (SQLi, XSS, SSRF, IDOR) sebagai persiapan mengikuti bug bounty program secara legal dan bertanggung jawab.</p>
+            <ul class="tags mono">
+              <li>PortSwigger</li><li>Burp Suite</li><li>Bug bounty basics</li>
+            </ul>
+          </article>
         </div>
-        <h3 data-id="Web Security Labs" data-en="Web Security Labs">Web Security Labs</h3>
-        <p data-id="Latihan terstruktur di PortSwigger Web Security Academy (SQLi, XSS, SSRF, IDOR) sebagai persiapan mengikuti bug bounty program secara legal dan bertanggung jawab."
-           data-en="Structured practice on PortSwigger Web Security Academy (SQLi, XSS, SSRF, IDOR) as preparation for participating in bug bounty programs legally and responsibly.">
-           Latihan terstruktur di PortSwigger Web Security Academy (SQLi, XSS, SSRF, IDOR) sebagai persiapan mengikuti bug bounty program secara legal dan bertanggung jawab.</p>
-        <ul class="tags mono">
-          <li>PortSwigger</li><li>Burp Suite</li><li>Bug bounty basics</li>
-        </ul>
-      </article>
-    </div>
-  </section>
+      </section>
 
-  <section id="services" class="section">
-    <h2 class="section-title"><span class="accent mono">04.</span> <span data-id="Jasa yang Saya Tawarkan" data-en="Services I Offer">Jasa yang Saya Tawarkan</span></h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3 data-id="Pengembangan API Backend" data-en="Backend API Development">Pengembangan API Backend</h3>
-        <p data-id="REST API dengan Go/Node.js: teruji, terdokumentasi, siap deploy. Cocok untuk web app, mobile backend, dan integrasi layanan."
-           data-en="REST APIs with Go/Node.js: tested, documented, ready to deploy. Ideal for web apps, mobile backends, and service integrations.">
-           REST API dengan Go/Node.js: teruji, terdokumentasi, siap deploy. Cocok untuk web app, mobile backend, dan integrasi layanan.</p>
-      </div>
-      <div class="service-card">
-        <h3 data-id="Docker &amp; Setup CI/CD" data-en="Docker &amp; CI/CD Setup">Docker &amp; Setup CI/CD</h3>
-        <p data-id="Kontenisasi aplikasi dan pipeline GitHub Actions otomatis: build, test, dan deploy setiap kali push kode."
-           data-en="Containerize your app and set up an automated GitHub Actions pipeline: build, test, and deploy on every push.">
-           Kontenisasi aplikasi dan pipeline GitHub Actions otomatis: build, test, dan deploy setiap kali push kode.</p>
-      </div>
-      <div class="service-card">
-        <h3 data-id="Setup &amp; Pengamanan Server" data-en="Server Setup &amp; Hardening">Setup &amp; Pengamanan Server</h3>
-        <p data-id="Deploy aplikasi ke server Linux, konfigurasi Redis/Nginx, dan pengamanan dasar: firewall, password policy, dan batasan akses."
-           data-en="Deploy apps to a Linux server, configure Redis/Nginx, and secure the basics: firewall, password policy, and access restrictions.">
-           Deploy aplikasi ke server Linux, konfigurasi Redis/Nginx, dan pengamanan dasar: firewall, password policy, dan batasan akses.</p>
-      </div>
-      <div class="service-card">
-        <h3 data-id="Security Audit Website" data-en="Website Security Audit">Security Audit Website</h3>
-        <p data-id="Review kode dan konfigurasi website kecil-menengah: laporan temuan lengkap dengan severity, bukti, dan langkah perbaikannya."
-           data-en="Code and configuration review for small-to-medium websites: a report of findings with severity, proof, and step-by-step fixes.">
-           Review kode dan konfigurasi website kecil-menengah: laporan temuan lengkap dengan severity, bukti, dan langkah perbaikannya.</p>
-      </div>
-    </div>
-  </section>
+      <section id="services" class="section reveal">
+        <h2 class="section-title"><span class="accent mono">04.</span> <span data-id="Jasa yang Saya Tawarkan" data-en="Services I Offer">Jasa yang Saya Tawarkan</span></h2>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <span class="service-num mono accent">/01</span>
+            <h3 data-id="Pengembangan API Backend" data-en="Backend API Development">Pengembangan API Backend</h3>
+            <p data-id="REST API dengan Go/Node.js: teruji, terdokumentasi, siap deploy. Cocok untuk web app, mobile backend, dan integrasi layanan."
+               data-en="REST APIs with Go/Node.js: tested, documented, ready to deploy. Ideal for web apps, mobile backends, and service integrations.">
+               REST API dengan Go/Node.js: teruji, terdokumentasi, siap deploy. Cocok untuk web app, mobile backend, dan integrasi layanan.</p>
+          </div>
+          <div class="service-card reveal">
+            <span class="service-num mono accent">/02</span>
+            <h3 data-id="Docker &amp; Setup CI/CD" data-en="Docker &amp; CI/CD Setup">Docker &amp; Setup CI/CD</h3>
+            <p data-id="Kontenisasi aplikasi dan pipeline GitHub Actions otomatis: build, test, dan deploy setiap kali push kode."
+               data-en="Containerize your app and set up an automated GitHub Actions pipeline: build, test, and deploy on every push.">
+               Kontenisasi aplikasi dan pipeline GitHub Actions otomatis: build, test, dan deploy setiap kali push kode.</p>
+          </div>
+          <div class="service-card reveal">
+            <span class="service-num mono accent">/03</span>
+            <h3 data-id="Setup &amp; Pengamanan Server" data-en="Server Setup &amp; Hardening">Setup &amp; Pengamanan Server</h3>
+            <p data-id="Deploy aplikasi ke server Linux, konfigurasi Redis/Nginx, dan pengamanan dasar: firewall, password policy, dan batasan akses."
+               data-en="Deploy apps to a Linux server, configure Redis/Nginx, and secure the basics: firewall, password policy, and access restrictions.">
+               Deploy aplikasi ke server Linux, konfigurasi Redis/Nginx, dan pengamanan dasar: firewall, password policy, dan batasan akses.</p>
+          </div>
+          <div class="service-card reveal">
+            <span class="service-num mono accent">/04</span>
+            <h3 data-id="Security Audit Website" data-en="Website Security Audit">Security Audit Website</h3>
+            <p data-id="Review kode dan konfigurasi website kecil-menengah: laporan temuan lengkap dengan severity, bukti, dan langkah perbaikannya."
+               data-en="Code and configuration review for small-to-medium websites: a report of findings with severity, proof, and step-by-step fixes.">
+               Review kode dan konfigurasi website kecil-menengah: laporan temuan lengkap dengan severity, bukti, dan langkah perbaikannya.</p>
+          </div>
+        </div>
+      </section>
 
-  <section id="contact" class="section contact">
-    <h2 class="section-title"><span class="accent mono">05.</span> <span data-id="Hubungi Saya" data-en="Get In Touch">Hubungi Saya</span></h2>
-    <p class="contact-lead"
-       data-id="Punya proyek atau butuh bantuan teknis? Kirim email — biasanya saya balas dalam 1×24 jam."
-       data-en="Got a project or need technical help? Send me an email — I usually reply within 24 hours.">
-       Punya proyek atau butuh bantuan teknis? Kirim email — biasanya saya balas dalam 1×24 jam.</p>
-    <a class="btn btn-primary btn-lg" href="mailto:gederizalmaulana@gmail.com">gederizalmaulana@gmail.com</a>
-    <div class="contact-links mono">
-      <a href="https://github.com/igederizal" target="_blank" rel="noopener">github.com/igederizal</a>
-    </div>
-  </section>
+      <section id="contact" class="section contact reveal">
+        <h2 class="section-title"><span class="accent mono">05.</span> <span data-id="Hubungi Saya" data-en="Get In Touch">Hubungi Saya</span></h2>
+        <p class="contact-lead"
+           data-id="Punya proyek atau butuh bantuan teknis? Kirim email — biasanya saya balas dalam 1×24 jam."
+           data-en="Got a project or need technical help? Send me an email — I usually reply within 24 hours.">
+           Punya proyek atau butuh bantuan teknis? Kirim email — biasanya saya balas dalam 1×24 jam.</p>
+        <a class="btn btn-primary btn-lg" href="mailto:gederizalmaulana@gmail.com">gederizalmaulana@gmail.com</a>
+        <div class="contact-links mono">
+          <a href="https://github.com/igederizal" target="_blank" rel="noopener">github.com/igederizal</a>
+        </div>
+      </section>
 
-  <footer class="footer mono">
-    <p data-id="Dibuat dari nol dengan HTML, CSS, dan JavaScript. © 2026 I Gede Rizal Maulana."
-       data-en="Hand-built with HTML, CSS, and JavaScript. © 2026 I Gede Rizal Maulana.">
-       Dibuat dari nol dengan HTML, CSS, dan JavaScript. © 2026 I Gede Rizal Maulana.</p>
-  </footer>
+      <footer class="footer mono">
+        <p data-id="Dibuat dari nol dengan HTML, CSS, dan JavaScript. © 2026 I Gede Rizal Maulana."
+           data-en="Hand-built with HTML, CSS, and JavaScript. © 2026 I Gede Rizal Maulana.">
+           Dibuat dari nol dengan HTML, CSS, dan JavaScript. © 2026 I Gede Rizal Maulana.</p>
+      </footer>
+
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
